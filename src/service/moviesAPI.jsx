@@ -3,7 +3,7 @@ import axios from "axios";
 axios.defaults.baseURL = "https://api.themoviedb.org/3/";
 
 const API_KEY = "345248b3f6c217de68dc4864b5478bda";
-const urlTrending = "trending/movie/week";
+const urlTrending = "trending/movie/day";
 
 const options = {
   headers: {
