@@ -15,7 +15,15 @@ export const HomePage = () => {
         {movies.map((item) => {
           return (
             <li key={item.id}>
-              <Link to={`${item.id}`}>{item.title}</Link>
+              <Link to={`${item.id}`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w154${item.poster_path}`}
+                  alt={item.title}
+                />
+                <h3>{item.title}</h3>
+                <p>Rating: {item.vote_average.toFixed(1)}/10</p>
+                <p>Release date: {item.release_date}</p>
+              </Link>
             </li>
           );
         })}
