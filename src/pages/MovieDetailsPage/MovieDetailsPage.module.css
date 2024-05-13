@@ -1,0 +1,52 @@
+.details {
+  display: flex;
+  gap: 30px;
+  p {
+    font-size: 18px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+}
+
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.listGenres,
+.listInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  li,
+  .link {
+    padding: 8px;
+    border: 1px solid rgb(189, 189, 73);
+    border-radius: 20px;
+    background-color: rgba(128, 128, 100, 0.8);
+  }
+}
+
+.listInfo {
+  margin: 10px 10px 20px;
+  .link:hover {
+    scale: 1.1;
+    transition: 0.5s ease-in-out;
+    background-color: rgb(159, 159, 45);
+  }
+}
+
+.Link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  margin: 8px;
+  padding: 4px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  max-width: 94px;
+}

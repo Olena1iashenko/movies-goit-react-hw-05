@@ -1,0 +1,17 @@
+nav {
+  border-bottom: 2px solid rgb(185, 180, 95, 0.6);
+  padding: 16px;
+}
+
+.link {
+  padding: 8px;
+  margin: 8px;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.link.active {
+  background-color: rgba(255, 217, 0, 0.7);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}

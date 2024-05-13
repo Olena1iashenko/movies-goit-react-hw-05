@@ -48,3 +48,23 @@ img {
   display: block;
   height: auto;
 }
+
+/* Personal common styles */
+
+img {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 18px;
+}
+
+p {
+  color: rgba(234, 234, 234, 0.517);
+}

@@ -1,0 +1,11 @@
+.list {
+  display: flex;
+  gap: 8px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  transition: height 0.5s linear;
+}
+
+.actor {
+  text-align: center;
+}

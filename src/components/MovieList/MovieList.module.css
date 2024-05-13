@@ -6,33 +6,16 @@
   align-content: flex-start;
   padding: 20px 0;
   overflow-x: scroll;
-  overflow-y: hidden;
+  flex-wrap: wrap;
   transition: height 0.5s linear;
-}
-
-li {
-  max-width: 185px;
-  position: relative;
-}
-
-li:hover {
-  scale: 1.1;
-
-  transition: 0.5s ease-in-out;
-}
-
-img {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-h3 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 18px;
+  li {
+    max-width: 185px;
+    position: relative;
+  }
+  li:hover {
+    scale: 1.1;
+    transition: 0.5s ease-in-out;
+  }
 }
 
 .rate {
@@ -53,6 +36,11 @@ h3 {
   font-weight: bold;
 }
 
-p {
-  color: rgba(234, 234, 234, 0.517);
+.moviePoster {
+  height: 275px;
+}
+
+.notFoundImage {
+  width: 185px;
+  height: 275px;
 }
