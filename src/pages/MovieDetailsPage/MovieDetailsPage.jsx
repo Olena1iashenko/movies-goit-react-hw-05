@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import {
   Link,
   NavLink,
@@ -15,7 +15,7 @@ export const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
   const location = useLocation();
-  const backLinkHref = location.state ?? "/movies";
+  const backLinkHref = useRef(location.state ?? "/movies");
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -43,7 +43,7 @@ export const MovieDetailsPage = () => {
         />
       ) : (
         <>
-          <Link to={backLinkHref} className={s.Link}>
+          <Link to={backLinkHref.current} className={s.Link}>
             <FaArrowLeftLong /> Go back
           </Link>
           <div className={s.details}>

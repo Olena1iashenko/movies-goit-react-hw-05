@@ -10,7 +10,7 @@ export const MovieList = ({ movies }) => {
       {movies?.map((item) => {
         return (
           <li key={item.id}>
-            <Link to={`${item.id}`} state={location}>
+            <Link to={`/movies/${item.id}`} state={location}>
               <img
                 src={
                   item.poster_path
