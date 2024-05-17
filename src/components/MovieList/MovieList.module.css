@@ -6,7 +6,7 @@
   align-content: flex-start;
   padding: 20px 0;
   overflow-x: scroll;
-  flex-wrap: wrap;
+
   transition: height 0.5s linear;
   li {
     max-width: 185px;
@@ -16,6 +16,9 @@
     scale: 1.1;
     transition: 0.5s ease-in-out;
   }
+}
+.movies {
+  flex-wrap: wrap;
 }
 
 .rate {

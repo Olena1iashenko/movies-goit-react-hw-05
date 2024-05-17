@@ -4,7 +4,7 @@ import { getMovies } from "../../service/moviesAPI";
 import MovieList from "../../components/MovieList/MovieList";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { TailSpin } from "react-loader-spinner";
 
 export const MoviesPage = () => {
@@ -18,7 +18,7 @@ export const MoviesPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (event.target.elements.query.value.trim() === "") {
-      return toast.info("Please enter your search");
+      return toast.error("Please enter your search");
     }
     const query = event.target.elements.query.value.trim();
     setSearchParams({ query });
@@ -35,6 +35,9 @@ export const MoviesPage = () => {
       setError("");
       try {
         const data = await getMovies(movieName);
+        if (!data.length) {
+          toast.error("Please enter another search");
+        }
         setData(data);
       } catch (error) {
         setError(true);
@@ -47,7 +50,6 @@ export const MoviesPage = () => {
 
   return (
     <>
-      <Toaster position="top-right" />
       <form onSubmit={handleSubmit}>
         <HiSearch className={s.icon} />
         <input
@@ -56,7 +58,6 @@ export const MoviesPage = () => {
           type="text"
           defaultValue={movieName}
           name="query"
-          required
         />
         <button type="submit">Search</button>
       </form>
@@ -73,8 +74,7 @@ export const MoviesPage = () => {
           radius="1"
         />
       )}
-      {data.length !== 0 && <MovieList movies={data} />}
-      {error && toast.error("Something went wrong")}
+      {data.length ? <MovieList type="movies" movies={data} /> : null}
     </>
   );
 };

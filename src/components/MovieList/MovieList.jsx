@@ -1,12 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import s from "./MovieList.module.css";
 import NotFoundImage from "../../img/imagenotfound.png";
+import clsx from "clsx";
 
-export const MovieList = ({ movies }) => {
+export const MovieList = ({ movies, type }) => {
   const location = useLocation();
 
   return (
-    <ul className={s.list}>
+    <ul className={clsx(s.list, type === "movies" && s.movies)}>
       {movies?.map((item) => {
         return (
           <li key={item.id}>
